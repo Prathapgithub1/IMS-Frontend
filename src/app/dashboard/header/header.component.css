@@ -1,0 +1,17 @@
+button{
+    cursor: pointer;
+    border-radius:12px;
+    width:80px;
+}
+
+.user_details{
+    cursor: pointer;
+}
+
+.login{
+    font-weight:900;
+    color: rgb(145, 115, 120);
+    text-align:center;
+}
+
+/* new css  */

@@ -1,0 +1,38 @@
+<div class="right_content_sub_page">
+    <div class="content_page_body dashboard_body">
+        <div class="content_sub_page">
+
+            <div class="content_page_header">
+                <div class="company_logo">
+                    <h3 class="login_h3">Create Prod Category</h3>
+                </div>
+
+                <div class="action_needed">
+                    <a href="#" class="cu_button active" (click)="addProduct()">Save</a>
+                    <a href="./employees.html" class="cu_button active">Back to Grid</a>
+                </div>
+            </div>
+            <div class="create_new_one">
+                <form [formGroup]="productCategory">
+                    <div class="creating_new">
+                        <div class="input_field">
+                            <input type="text" placeholder="Prod Category Name" formControlName="categoryName">
+                        </div>
+                        <div class="input_field">
+                            <div class="input_sub_field">
+                                <input type="text" placeholder="Price" formControlName="price">
+                            </div>
+                            <div class="input_sub_field">
+                                <input type="text" placeholder="Qty" formControlName="quantity">
+                            </div>
+                        </div>
+                        <div class="input_field">
+                            <textarea name="" id="" cols="30" rows="2" placeholder="Description"
+                                formControlName="description"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

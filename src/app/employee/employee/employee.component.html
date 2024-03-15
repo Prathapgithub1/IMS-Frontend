@@ -1,0 +1,146 @@
+<div class="right_content_sub_page" *ngIf="EmployeeTable" style="max-height: 530px; overflow-y: auto">
+    <div class="content_page_body dashboard_body">
+        <div class="content_sub_page">
+            <div class="content_page_header">
+                <div class="company_logo">
+                    <h3 class="login_h3"></h3>
+                </div>
+
+                <div class="action_needed">
+                    <button (click)="addEmployee()" class="cu_button active">Add</button>
+                </div>
+            </div>
+
+            <div class="table_view">
+                <div class="tableFixHead">
+                    <table id="customers">
+                        <thead>
+                            <tr>
+                                <th style="width: 50px;">S. No</th>
+                                <th style="width: 50px;">Firstname</th>
+                                <th style="width: 200px;">Lastname</th>
+                                <th style="width: 70px;">Department</th>
+                                <th style="width: 70px;">Position</th>
+                                <th style="width: 70px;">Salary</th>
+                                <th style="width: 50px;">Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor="let emp of employee let i=index">
+                                <td>{{i}}</td>
+                                <td>{{emp.FirstName}}</td>
+                                <td>{{emp.LastName}}</td>
+                                <td>{{emp.Position}}</td>
+                                <td>{{emp.Department}}</td>
+                                <td>{{emp.Salary}}</td>
+                                <td>
+                                    <div class="tb_action">
+                                        <div (click)="Edit(emp)"><button class="fa-solid fa-pen-to-square" ></button></div>
+                                        <div (click)="remove(emp)"><button class="fa-solid fa-trash"></button></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div *ngIf="createEmployee"  class="right_content_page">
+    <div class="right_content_sub_page">
+        <div class="content_page_body dashboard_body">
+            <div class="content_sub_page">
+
+                <div class="content_page_header">
+                    <div class="company_logo">
+                        <h3 class="login_h3">Create Employee</h3>
+                    </div>
+
+                    <div class="action_needed">
+                        <button  class="cu_button active" (click)="SaveButton()">Save</button>
+                        <button class="cu_button active" (click)="BackButton()">Back to Grid</button>
+                    </div>
+                </div>
+
+                <div class="create_new_one">
+                    <div class="creating_new">
+
+                        <div class="input_field">
+                            <input type="text" placeholder="FirstName" [(ngModel)]='EmployeeData.params.FirstName'>
+                        </div>
+
+                        <div class="input_field">
+                            <div class="input_sub_field">
+                                <input type="text" placeholder="LastName" [(ngModel)]='EmployeeData.params.LastName'>
+                            </div>
+
+                            <div class="input_sub_field">
+                                <input type="text" placeholder="Department" [(ngModel)]='EmployeeData.params.Department'>
+                            </div>
+                        </div>
+
+                        <div class="input_field">
+                            <input type="text" placeholder="Position" [(ngModel)]='EmployeeData.params.Position'>
+                        </div>
+                        <div class="input_field">
+                            <input type="text" placeholder="Salary" [(ngModel)]='EmployeeData.params.Salary'>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="EditEmployee"  class="right_content_page">
+    <div class="right_content_sub_page">
+        <div class="content_page_body dashboard_body">
+            <div class="content_sub_page">
+
+                <div class="content_page_header">
+                    <div class="company_logo">
+                        <h3 class="login_h3">Edit Employee</h3>
+                    </div>
+
+                    <div class="action_needed">
+                        <button  class="cu_button active" (click)="EditSaveButton()">Save</button>
+                        <button class="cu_button active" (click)="EditBackButton()">Back to Grid</button>
+                    </div>
+                </div>
+
+                <div class="create_new_one">
+                    <div class="creating_new">
+
+                        <div class="input_field">
+                            <input type="text" placeholder="FirstName" [(ngModel)]='EmployeeData.params.FirstName'>
+                        </div>
+
+                        <div class="input_field">
+                            <div class="input_sub_field">
+                                <input type="text" placeholder="LastName" [(ngModel)]='EmployeeData.params.LastName'>
+                            </div>
+
+                            <div class="input_sub_field">
+                                <input type="text" placeholder="Department" [(ngModel)]='EmployeeData.params.Department'>
+                            </div>
+                        </div>
+
+                        <div class="input_field">
+                            <input type="text" placeholder="Position" [(ngModel)]='EmployeeData.params.Position'>
+                        </div>
+                        <div class="input_field">
+                            <input type="text" placeholder="Salary" [(ngModel)]='EmployeeData.params.Salary'>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

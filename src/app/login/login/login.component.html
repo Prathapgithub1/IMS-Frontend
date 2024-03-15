@@ -1,0 +1,62 @@
+<div class="content_page">
+    <div class="login_header">
+        <div class="company_logo">
+            <img src="./assets/img/Suvarna Logo1.png" alt="">
+        </div>
+        <div class="company_logo">
+            <span class="providing_logo">IM</span>
+        </div>
+    </div>
+    <div class="login_body">
+            <div class="login_content">
+            
+                <div class="login_field_user_content">
+                    <h3 class="login_h3">Log in</h3>
+                    <div class="login_field_user">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                </div>
+    
+                <div class="login_field_content">
+    
+    
+                    <div class="login_field">
+                        <!-- <label for="im_user_name">User Name</label> -->
+                        <div class="im_login_field">
+                            <span class="im_login_field_icon">
+                                <i class="fa-solid fa-user"></i>
+                            </span>
+                            <input type="text" placeholder="User Name" [(ngModel)]="newUser.params.Username" name="Username">
+                        </div>
+                    </div>
+                    <div class="login_field">
+                        <!-- <label for="">Password</label> -->
+                        <div class="im_login_field">
+                            <span class="im_login_field_icon">
+                                <i class="fa-solid fa-lock"></i>
+                            </span>
+    
+                            <input type="password" placeholder="Password" [(ngModel)]="newUser.params.Password" name="Password">
+    
+                            <span class="im_login_field_view_icon">
+                                <i class="fa-solid fa-eye"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="login_field_forgot">
+                        <a (click)="forget()">Forgot your password?</a>
+                    </div>
+    
+                </div>
+                <div class="login_field_button">
+                    <button (click)="onLogin()">Login</button>
+                </div>
+                <div class="login_field_forgot">
+                    <a (click)="goToSignup()">
+                        <span>Signup</span>
+                    </a>
+                </div>
+            </div>
+    </div>
+</div>

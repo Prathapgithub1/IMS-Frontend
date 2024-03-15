@@ -1,0 +1,194 @@
+<div *ngIf="table" class="right_content_page" style="max-height: 530px; overflow-y: auto">
+    <div class="right_content_sub_page">
+      <div class="content_page_body dashboard_body">
+        <div class="content_sub_page">
+          <div class="content_page_header">
+            <div class="company_logo">
+              <h3 class="login_h3"></h3>
+            </div>
+  
+            <div class="action_needed">
+              <button class="cu_button active" (click)="add()">Add</button>
+            </div>
+          </div>
+  
+          <div class="table_view">
+            <div class="tableFixHead">
+              <table id="customers">
+                <thead>
+                  <tr>
+                    <th style="width: 50px">S. No</th>
+                    <th style="width: 50px">Status</th>
+                    <th style="width: 200px">User Name</th>
+                    <th style="width: 200px">Display Name</th>
+                    <th style="width: 70px">Gender</th>
+                    <th style="width: 70px">User Id</th>
+                    <th style="width: 100px">Type of Users</th>
+                    <th style="width: 100px">Password</th>
+  
+                    <th style="width: 200px">User Email</th>
+                    <th style="width: 200px">Address</th>
+                    <th style="width: 50px">Action</th>
+                  </tr>
+                </thead>
+  
+                <tbody>
+                  <tr *ngFor="let user of Users; let i = index">
+                    <td style="text-align: center">{{i}}</td>
+                    <td>{{user.Status}}</td>
+                      <td>{{user.Username}}</td>
+                      <td>{{user.Username}}</td>
+                      <td>{{user.Gender}}</td>
+                      <td>{{user.UserId}}</td>
+                      <td>{{user.Role}}</td>
+                      <td>{{user.Password}}</td>
+                      <td>{{user.Email}}</td>
+                      <td>{{user.Address}}</td>
+                    <td>
+                      <div class="tb_action">
+                        <div (click)="EditButton(user)" class="Button"><button  class="fa-solid fa-pen-to-square"></button></div>
+                        <div (click)="DeleteButton(user)" class="Button"><button class="fa-solid fa-trash"></button></div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+<div *ngIf="Addview" class="right_content_sub_page">
+      <div class="content_page_body dashboard_body">
+          <div class="content_sub_page">
+  
+              <div class="content_page_header">
+                  <div class="company_logo">
+                      <h3 class="login_h3">Create User</h3>
+                  </div>
+  
+                  <div class="action_needed">
+                      <button (click)="saveButton()"  class="cu_button active">Save</button>
+                      <button (click)="backButton()" class="cu_button active">Back to Grid</button>
+                  </div>
+              </div>
+  
+              <div class="create_new_one">
+                  <div class="creating_new">
+                    <div class="input_field">
+                        <input type="text" placeholder="status"  [(ngModel)]="userData.params.Status" name="Status">
+                    </div>
+                      <div class="input_field">
+                          <input type="text" placeholder="User Name"  [(ngModel)]="userData.params.Username" name="Username">
+                      </div>
+  
+                      <!-- <div class="input_field">
+                          <input type="text" placeholder="Display Name"   [(ngModel)]="userData.params.Username">
+                      </div> -->
+  
+                      <div class="input_field">
+                          <div class="input_sub_field">
+                              <input type="text" placeholder="Gender"    [(ngModel)]="userData.params.Gender">
+                          </div>
+                          <div class="input_sub_field">
+                            <input type="text" placeholder="UserId"    [(ngModel)]="userData.params.UserId">
+                        </div>
+                          <div class="input_sub_field">
+                              <select name="" id="" [(ngModel)]="userData.params.Role" name="Role">
+                                  <option value="User">User</option>
+                                  <option value="Employee">Employee</option>
+                              </select>
+                          </div>
+                      </div>
+  
+                      <div class="input_field">
+                          <div class="input_sub_field">
+                              <input type="text" placeholder="Password" [(ngModel)]="userData.params.Password">
+                          </div>
+                          <!-- <div class="input_sub_field">
+                              <input type="text" placeholder="Mobile Number">
+                          </div> -->
+                      </div>
+  
+                      <div class="input_field">
+                          <input type="text" placeholder="Email" [(ngModel)]="userData.params.Email">
+                      </div>
+  
+                      <div class="input_field">
+                          <textarea name="" id="" cols="30" rows="2" placeholder="Address" [(ngModel)]="userData.params.Address"></textarea>
+                      </div>
+  
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div *ngIf="EditTemplate" class="right_content_sub_page">
+    <div class="content_page_body dashboard_body">
+        <div class="content_sub_page">
+
+            <div class="content_page_header">
+                <div class="company_logo">
+                    <h3 class="login_h3">Edit User</h3>
+                </div>
+
+                <div class="action_needed">
+                    <button (click)="EditSave()"  class="cu_button active">Save</button>
+                    <button (click)="EditBack()" class="cu_button active">Back to Grid</button>
+                </div>
+            </div>
+
+            <div class="create_new_one">
+                <div class="creating_new">
+                  <div class="input_field">
+                      <input type="text" placeholder="status"  [(ngModel)]="userData.params.Status" name="Status">
+                  </div>
+                    <div class="input_field">
+                        <input type="text" placeholder="User Name"  [(ngModel)]="userData.params.Username" name="Username">
+                    </div>
+
+                    <!-- <div class="input_field">
+                        <input type="text" placeholder="Display Name"   [(ngModel)]="userData.params.Username">
+                    </div> -->
+
+                    <div class="input_field">
+                        <div class="input_sub_field">
+                            <input type="text" placeholder="Gender"    [(ngModel)]="userData.params.Gender">
+                        </div>
+                        <div class="input_sub_field">
+                          <input type="text" placeholder="UserId"    [(ngModel)]="userData.params.UserId">
+                      </div>
+                        <div class="input_sub_field">
+                            <select name="" id="" [(ngModel)]="userData.params.Role">
+                                <option value="User">User</option>
+                                <option value="Employee">Employee</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input_field">
+                        <div class="input_sub_field">
+                            <input type="text" placeholder="Password" [(ngModel)]="userData.params.Password">
+                        </div>
+                        <!-- <div class="input_sub_field">
+                            <input type="text" placeholder="Mobile Number">
+                        </div> -->
+                    </div>
+
+                    <div class="input_field">
+                        <input type="text" placeholder="Email" [(ngModel)]="userData.params.Email">
+                    </div>
+
+                    <div class="input_field">
+                        <textarea name="" id="" cols="30" rows="2" placeholder="Address" [(ngModel)]="userData.params.Address"></textarea>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

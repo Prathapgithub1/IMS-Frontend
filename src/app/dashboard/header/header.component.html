@@ -1,0 +1,31 @@
+<div class="content_page_header">
+    <div class="company_logo">
+        <h3 class="login_h3">{{headerRouteName}}</h3>
+    </div>
+
+    <div class="header_left">
+        <!-- <a href="./signup.html">Signup</a> -->
+        <div class="user_details">
+            <div class="login_field_user">
+                <i  class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="user_details_content"  style="margin-top:-15px;">
+                <ul class="content_tabs">
+                    <li class="guest_login">
+                        <label class="last_login">
+                            User Login 
+                            <p class="login">{{name}}</p>
+                        </label>
+                        <!-- <span class="last_login_time"> Guest User</span> -->
+                    </li>
+
+                </ul>
+
+                <div class="log_out">
+                    <button (click)="LogOut()">Log Out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

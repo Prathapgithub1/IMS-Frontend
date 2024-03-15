@@ -1,0 +1,53 @@
+<div class="right_content_sub_page">
+    <div class="content_page_body dashboard_body">
+        <div class="content_sub_page">
+            <div class="content_page_header">
+                <div class="company_logo">
+                    <h3 class="login_h3">Create User</h3>
+                </div>
+                <div class="action_needed">
+                    <a href="#" class="cu_button active" (click)="addPerson()">Save</a>
+                    <a  class="cu_button active">Back to Grid</a>
+                </div>
+            </div>
+            <form [formGroup]="createForm">
+                <div class="create_new_one">
+                    <div class="creating_new">
+                        <div class="input_field">
+                            <input type="text" placeholder="User Name" formControlName="username">
+                        </div>
+                        <div class="input_field">
+                            <input type="text" placeholder="Display Name" formControlName="displayname">
+                        </div>
+
+                        <div class="input_field">
+                            <div class="input_sub_field">
+                                <input type="text" placeholder="Gender" formControlName="gender">
+                            </div>
+                            <div class="input_sub_field">
+                                <select >
+                                    <option>User</option>
+                                    <option>Employee</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input_field">
+                            <div class="input_sub_field">
+                                <input type="text" placeholder="Password" formControlName="password">
+                            </div>
+                            <div class="input_sub_field">
+                                <input type="text" placeholder="Mobile Number" formControlName="mobile">
+                            </div>
+                        </div>
+                        <div class="input_field">
+                            <input type="text" placeholder="Email" formControlName="email">
+                        </div>
+                        <div class="input_field">
+                            <textarea cols="30" rows="2" placeholder="Address" formControlName="address"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

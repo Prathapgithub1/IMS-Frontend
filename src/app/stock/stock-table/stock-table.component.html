@@ -1,0 +1,123 @@
+<div class="right_content_sub_page" *ngIf="SockTable" style="max-height: 530px; overflow-y: auto">
+    <div class="content_page_body dashboard_body">
+        <div class="content_sub_page">
+            <div class="content_page_header">
+                <div class="company_logo">
+                    <h3 class="login_h3"></h3>
+                </div>
+
+                <div class="action_needed">
+                    <button (click)="AddButton()" class="cu_button active">Add</button>
+                </div>
+            </div>
+
+            <div class="table_view">
+                <div class="tableFixHead">
+                    <table id="customers">
+                        <thead>
+                            <tr>
+                                <th style="width: 50px;">S. No</th>
+                                <th>ProductID</th>
+                                <th>Quantity</th>
+                                <th>location</th>
+                                <th>lastUpdated</th>
+                                <th style="width: 50px;">Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor="let stock of stocks  let i=index">
+                                <td>{{i+1}}</td>
+                                <td>{{stock.ProductID}}</td>
+                                <td>{{stock.Quantity}}</td>
+                                <td>{{stock.location}}</td>
+                                <td>{{stock.lastUpdated}}</td>
+                                <td>
+                                    <div class="tb_action">
+                                        <div (click)="StockEditButton(stock)"><button class="fa-solid fa-pen-to-square"></button></div>
+                                        <div (click)="StockDeleteButton(stock)"><button class="fa-solid fa-trash"></button></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="right_content_sub_page" *ngIf="CreateStock">
+    <div class="content_page_body dashboard_body">
+        <div class="content_sub_page">
+
+            <div class="content_page_header">
+                <div class="company_logo">
+                    <h3 class="login_h3">Create Stock</h3>
+                </div>
+
+                <div class="action_needed">
+                    <button (click)="SaveButton()"  class="cu_button active">Save</button>
+                    <button (click)="BackButton()" class="cu_button active">Back to Grid</button>
+                </div>
+            </div>
+
+            <div class="create_new_one">
+                <div class="creating_new">
+
+                    <div class="input_field">
+                        <input type="text" placeholder="ProductName" [(ngModel)]="StockData.params.Name">
+                    </div>
+
+                    <div class="input_field">
+                        <div class="input_sub_field">
+                            <input type="text" placeholder="Qty"  [(ngModel)]="StockData.params.Quantity">
+                        </div>
+
+                        <div class="input_sub_field">
+                            <input type="text" placeholder="location" [(ngModel)]="StockData.params.location">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="right_content_sub_page" *ngIf="Editstock">
+    <div class="content_page_body dashboard_body">
+        <div class="content_sub_page">
+
+            <div class="content_page_header">
+                <div class="company_logo">
+                    <h3 class="login_h3">Edit Stock</h3>
+                </div>
+
+                <div class="action_needed">
+                    <button (click)="EditSaveButton()"  class="cu_button active">Save</button>
+                    <button (click)="EditBackButton()" class="cu_button active">Back to Grid</button>
+                </div>
+            </div>
+
+            <div class="create_new_one">
+                <div class="creating_new">
+
+                    <!-- <div class="input_field">
+                        <input type="text" placeholder="ProductName" [(ngModel)]="StockData.params.Name">
+                    </div> -->
+
+                    <div class="input_field">
+                        <div class="input_sub_field">
+                            <input type="text" placeholder="Qty"  [(ngModel)]="StockData.params.Quantity">
+                        </div>
+
+                        <div class="input_sub_field">
+                            <input type="text" placeholder="location" [(ngModel)]="StockData.params.location">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

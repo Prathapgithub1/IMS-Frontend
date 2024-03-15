@@ -1,0 +1,111 @@
+<div class="right_content_sub_page">
+    <div class="content_page_body dashboard_body">
+
+        <div class="tile_contents">
+            <a (click)="Users()" class="tiles">
+                <div class="tiles_icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <div class="tiles_details">
+                    <h3>Users</h3>
+                    <div class="count">
+                        <span>{{users}}</span>
+                    </div>
+                </div>
+            </a>
+
+            <a (click)="Products()" class="tiles">
+                <div class="tiles_icon">
+                    <i class="fa-brands fa-product-hunt"></i>
+                </div>
+                <div class="tiles_details">
+                    <h3>Products</h3>
+                    <div class="count">
+                        <span>{{products}}</span>
+                    </div>
+                </div>
+            </a>
+
+            <a (click)="Employees()" class="tiles">
+                <div class="tiles_icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="tiles_details">
+                    <h3>Employees</h3>
+                    <div class="count">
+                        <span>{{employee}}</span>
+                    </div>
+                </div>
+            </a>
+
+            <a (click)="Stocks()" class="tiles">
+                <div class="tiles_icon">
+                    <i class="fa-solid fa-layer-group"></i>
+                </div>
+                <div class="tiles_details">
+                    <h3>Stock Items</h3>
+                    <div class="count">
+                        <span>{{stocks}}</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="other_content">
+
+            <div class="content_graph">
+                <div class="graph_buttons">
+                    <button type="submit" class="active">Today</button>
+                    <button type="submit">Yesterday</button>
+                    <button type="submit">Last Week</button>
+                    <button type="submit">This Week</button>
+                    <button type="submit">Last Month</button>
+                    <button type="submit">This Month</button>
+                    <button type="submit">Last Year</button>
+                    <button type="submit">This Year</button>
+                </div>
+
+                <div  class="tile_contents">
+
+                  <div  class="tiles">
+
+                        <p-chart type="pie"  [data]="data" [options]="options"></p-chart>
+
+
+                         <!-- <canvas id="myChart" style="width:100%;"></canvas> -->
+                    </div>
+
+                    <div class="tiles">
+                        <p-chart type="radar" [data]="data" [options]="options"></p-chart>
+
+                        <!-- <canvas id="myChart1" style="width:100%;"></canvas> -->
+                    </div>
+
+                    <div class="tiles">
+                        <p-chart type="doughnut" [data]="data" [options]="options"></p-chart>
+
+                        <!-- <canvas id="myChart2" style="width:100%;"></canvas> -->
+                    </div>
+
+                    <div class="tiles">
+        <p-chart type="bar"   [data]="data" [options]="options"></p-chart>
+
+                        <!-- <canvas id="myChart3" style="width:100%;"></canvas> -->
+                    </div>
+
+                    <div class="tiles">
+                <p-chart type="bubble"   [data]="data" [options]="options"></p-chart>
+
+                        <!-- <canvas id="myChart4" style="width:100%;"></canvas> -->
+                    </div>
+                    <!-- <div class="tiles">
+                        <p-chart type="line" [data]="data" [options]="options"></p-chart>                            </div>
+
+                                <!-- <canvas id="myChart4" style="width:100%;"></canvas> -->
+                            </div> -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

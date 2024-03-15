@@ -1,0 +1,35 @@
+<div class="right_content_sub_page">
+   <form #stockForm="ngForm">
+    <div class="content_page_body dashboard_body">
+        <div class="content_sub_page">
+            <div class="content_page_header">
+                <div class="company_logo">
+                    <h3 class="login_h3">Create Stock</h3>
+                </div>
+                <div class="action_needed">
+                    <a href="#" class="cu_button active" (click)="onSubmit()">Save</a>
+                    <a href="./employees.html" class="cu_button active">Back to Grid</a>
+                </div>
+            </div>
+            <div class="create_new_one">
+                <div class="creating_new">
+                    <div class="input_field">
+                        <input type="text" placeholder="Stock Name" name="stockName" [(ngModel)]="stockName">
+                    </div>
+                    <div class="input_field">
+                        <div class="input_sub_field">
+                            <input type="text" placeholder="Price" name="price" [(ngModel)]="price">
+                        </div>
+                        <div class="input_sub_field">
+                            <input type="text" placeholder="Qty" name="quantity" [(ngModel)]="quantity">
+                        </div>
+                    </div>
+                    <div class="input_field">
+                        <textarea name="" id="" cols="30" rows="2" placeholder="Description" name="textArea" [(ngModel)]="description"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   </form>
+</div>
